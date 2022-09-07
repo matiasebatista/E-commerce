@@ -4,9 +4,9 @@
  */
 package controller;
 
-import com.ecommerce.entity.JwtRequest;
-import com.ecommerce.entity.JwtResponse;
-import com.ecommerce.service.JwtService;
+import entity.JwtRequest;
+import entity.JwtResponse;
+import Service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;

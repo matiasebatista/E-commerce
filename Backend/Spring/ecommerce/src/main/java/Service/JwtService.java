@@ -4,23 +4,37 @@
  */
 package Service;
 
+import dao.UserDao;
 import entity.JwtRequest;
 import entity.JwtResponse;
+import entity.Role;
+import entity.User;
+import util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.Set;
 /**
  *
  * @author matia
  */
+
 @Service
-public class JwtService {
+public class JwtService implements UserDetailsService {
     @Autowired
     private JwtUtil jwtUtil;
 
     @Autowired
     private UserDao userDao;
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -32,7 +46,7 @@ public class JwtService {
         UserDetails userDetails = loadUserByUsername(userName);
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 
-        User user = userDao.findById(userName).get();
+       User user = userDao.findById(userName).get();
         return new JwtResponse(user, newGeneratedToken);
     }
 
