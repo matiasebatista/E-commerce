@@ -33,7 +33,7 @@ public class Role implements Serializable {
     @Column(name = "id")
     private Long id;
     @Column(name="role_id")
-    private String userName;
+    private String userId;
     @Column(name="role_description")
     private String userRole;
     

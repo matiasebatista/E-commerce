@@ -1,1 +1,11 @@
-jkljlka
+<div style="background-color:goldenrod;width:100%;height:40px;display: flex;justify-content: space-between;">
+<div style="margin-left:10px">
+    
+</div>
+<div style="margin-right:10px" (click)="login()">
+    Login
+</div>
+</div>
+<div>
+<ng-image-slider [manageImageRatio]="true"  [defaultActiveImage]="1" slideImage="1"  [infinite]="true" style="width:100%" [imagePopup]="false" [imageSize]="{width: '80%', height: '40'}" [images]="imgCollection"  #nav></ng-image-slider>
+</div>

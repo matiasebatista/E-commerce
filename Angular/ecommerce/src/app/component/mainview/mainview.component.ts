@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainview.component.css']
 })
 export class MainviewComponent implements OnInit {
-
-  constructor() { }
+opened = false;
+panelOpenState = false;
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }

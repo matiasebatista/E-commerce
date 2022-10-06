@@ -6,8 +6,53 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="margin:0%;padding:0%">
     <app-banner></app-banner>
-    
+    <div style="background-color:black;height: 30px;">
+    <mat-sidenav-container>
+        <mat-sidenav [(opened)]="opened" mode="over">
+            <div style="display:flex;flex-direction:column">
+           <a (click)="opened = !opened" style="justify-content:center;align-items:center;display:flex;background-color: grey;"> Close </a>
+           
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Producto1
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>Opcion1</p>
+                  <p>Opcion2</p>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+        Producto1
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+        <p>Opcion1</p>
+        <p>Opcion2</p>
+        </mat-expansion-panel>
+  </mat-accordion>
+        </div>
+        </mat-sidenav>
+        <mat-sidenav-content (click)="opened = !opened" style="display:flex;justify-content:center">
+            <div style="display:flex;flex-direction:column;justify-content: center;">
+            <a>P</a>
+            <a>R</a>
+            <a>O</a>
+            <a>D</a>
+            <a>U</a>
+            <a>C</a>
+            <a>T</a>
+            <a>O</a>
+            <a>S</a>
+
+    </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
 </body>
 </html>
