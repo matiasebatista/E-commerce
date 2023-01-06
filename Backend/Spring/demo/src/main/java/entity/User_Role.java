@@ -27,15 +27,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 
-public class Role implements Serializable {
+public class User_Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name="role_id")
-    private String userId;
-    @Column(name="role_description")
-    private String userRole;
     
+    @Column(name="role_id")
+    private String role_id;
+    
+    @Column(name="role_description")
+    private String role_description;
+    
+    @Column(name="user_email")
+    private String user_email;
+    
+
     
 }

@@ -5,17 +5,11 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,29 +20,25 @@ import lombok.Setter;
  *
  * @author matia
  */
+
 @Getter
 @Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User implements Serializable {
+public class Role implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name="user_name")
-    private String userName;
-    @Column(name="user_first_name")
-    private String userFirstName;
-    @Column(name="user_last_name")
-    private String userLastName;
-    @Column(name="user_email")
-    private String userEmail;
-    @Column(name="user_password")
-    private String userPassword;
     
-   @ManyToMany(mappedBy= "persona",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-   private List<User> user;
-   
+    @Column(name="nombre")
+    private String nombre;
+    
+    @Column(name="palabra_secreta")
+    private String palabra_secreta;
+
+
+
 }

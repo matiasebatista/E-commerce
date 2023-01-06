@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dao;
+package Repository;
 
-import entity.Role;
+import entity.User_Role;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 
@@ -15,6 +15,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 @Repository
 
-public interface RoleDao extends CrudRepository<Role, String> {
+public interface User_RoleDao extends CrudRepository<User_Role, String> {
      
 }
